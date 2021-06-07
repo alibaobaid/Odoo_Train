@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<record model="ir.actions.act_window" id="mat_action_window">
+      <field name="name">Material :</field>
+      <field name="res_model">event.material</field>
+      <field name="view_mode">tree,form</field>
+</record>
+
+
+<!-- material tree view -->
+<record id="model_name_view_tree" model="ir.ui.view">
+      <field name="name">material.view.tree</field>
+      <field name="model">event.material</field>
+      <field name="arch" type="xml">
+            <tree>
+                  <!-- Add your fields here -->
+                  <field name="mat_name"/>
+                  <!-- <field name="matang_ids"/>    -->
+            </tree>
+      </field>
+</record>
+
+
+ <menuitem name="Material" id="Material_idi" parent="Event_mange_sub_menue"
+              action="mat_action_window"/>
+</odoo>

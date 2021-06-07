@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <!-- actions opening views on models -->
+
+  <record model="ir.actions.act_window" id="event_action_window">
+    <field name="name">Events :</field>
+    <field name="res_model">event.event</field>
+    <field name="view_mode">tree,kanban,form,calendar,graph</field>
+  </record>
+  <record id="inherited767_view_form" model="ir.ui.view">
+    <field name="name">ievent.event.form</field>
+    <field name="model">event.event</field>
+    <field name="inherit_id" ref="event.view_event_form"/>
+    <field name="arch" type="xml">
+
+      <xpath expr="//field[@name='address_id']" position="after">
+        <field name="theme_event"/>
+      </xpath>
+
+      <xpath expr="//field[@name='organizer_id']" position="attributes">
+        <attribute name="invisible">True</attribute>
+      </xpath>
+      <xpath expr="//page[@name='event_communication']" position="after">
+          <page string="material" name="event_material">
+                 <field name="material_list" />
+          </page>
+        <!-- <form string="material">
+          <sheet>
+            <group>
+              <field name="material_list"/>
+            </group>
+          </sheet>
+        </form> -->
+      </xpath>
+
+    </field>
+  </record>
+
+
+
+  <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+  <menuitem id="event_mang_menu_root" name="Event Mangament" />
+
+  <menuitem id="Event_mange_sub_menue" name="Event mangament menue" parent="event_mang_menu_root" />
+
+  <!-- Top menu item -->
+
+
+  <!-- menu categories -->
+
+  <!-- actions -->
+
+  <menuitem name="Events" id="eventsssttt" parent="Event_mange_sub_menue" action="event_action_window"/>
+
+</odoo>

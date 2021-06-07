@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_organizer_mangament,organizer_mangament,model_organizer_mangament,,1,1,1,1
+access_event_material,event_material,model_event_material,,1,1,1,1
+access_material_equipment,material_equipment,model_material_equipment,,1,1,1,1
